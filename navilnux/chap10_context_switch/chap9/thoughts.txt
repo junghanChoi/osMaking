@@ -1,0 +1,21 @@
+memoery management object exists only one!
+so, is it okay that using singleton pattern?
+
+
+i think it is valid, but We must change access way of memmng instance from . into ->
+becauz now it should be pointer varable.
+
+memmng* getMM(void)
+{
+	static memmng* instance = NULL;
+
+	if(instance == NULL)
+	{
+		instance = mem_init();
+	}
+	return instance;
+}
+
+
+/////////////////////////////////
+
